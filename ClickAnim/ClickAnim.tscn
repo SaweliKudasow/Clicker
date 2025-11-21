@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://fbyd2je75paa"]
 
-[ext_resource type="Script" uid="uid://cuh36fbssjh72" path="res://ClickAnim/click_anim.gd" id="1_3nbj5"]
+[ext_resource type="Script" uid="uid://cuh36fbssjh72" path="res://ClickAnim/ClickAnim.gd" id="1_3nbj5"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_h85wq"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wlk42"]

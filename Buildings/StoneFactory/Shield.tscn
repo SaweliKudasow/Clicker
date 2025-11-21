@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://el1lxai1lm3t"]
+
+[ext_resource type="Script" uid="uid://sfv3smo56vf0" path="res://Buildings/ShieldAnim.gd" id="1_2glmr"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_t3mrx"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2glmr"]
+atlas = ExtResource("1_t3mrx")
+region = Rect2(36, 36, 8, 8)
+
+[node name="Shield" type="Node2D"]
+script = ExtResource("1_2glmr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_2glmr")
