@@ -24,6 +24,7 @@ offset_top = -8.0
 offset_right = 33.0
 offset_bottom = 24.0
 texture = SubResource("AtlasTexture_3b2b5")
+stretch_mode = 2
 
 [node name="Stone" type="Label" parent="TextureRect"]
 layout_mode = 1

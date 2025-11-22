@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://bhtcj5wwx6j7c"]
+[gd_scene load_steps=14 format=4 uid="uid://bhtcj5wwx6j7c"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory.tscn" id="2_03owx"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://gem0wpg42k72" path="res://Buildings/Castle/Castle.tscn" id="6_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://fbyd2je75paa" path="res://ClickAnim/ClickAnim.tscn" id="7_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://dij3roo8lyww6" path="res://UI.tscn" id="8_j4qnp"]
+[ext_resource type="PackedScene" uid="uid://cb6ge7vjvytde" path="res://Upgrade.tscn" id="9_03owx"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -65,3 +66,9 @@ position = Vector2(162, 170)
 [node name="ClickAnim" parent="." instance=ExtResource("7_c2ibq")]
 
 [node name="UI" parent="." instance=ExtResource("8_j4qnp")]
+
+[node name="Upgrade" parent="." instance=ExtResource("9_03owx")]
+offset_left = 176.0
+offset_top = 160.0
+offset_right = 176.0
+offset_bottom = 160.0
