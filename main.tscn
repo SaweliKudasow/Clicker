@@ -68,7 +68,7 @@ position = Vector2(162, 170)
 [node name="UI" parent="." instance=ExtResource("8_j4qnp")]
 
 [node name="Upgrade" parent="." instance=ExtResource("9_03owx")]
-offset_left = 176.0
-offset_top = 160.0
-offset_right = 176.0
-offset_bottom = 160.0
+offset_left = 1.0
+offset_top = -20.0
+offset_right = 1.0
+offset_bottom = -20.0
