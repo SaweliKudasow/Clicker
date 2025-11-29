@@ -1,31 +1,31 @@
-[gd_scene load_steps=7 format=3 uid="uid://dyt558qb37qqn"]
+[gd_scene load_steps=7 format=3 uid="uid://cleft587sipe7"]
 
-[ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_c6qfd"]
-[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_du1yl"]
+[ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_k2na8"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_qdqwo"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_v061q"]
-atlas = ExtResource("2_du1yl")
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1udm"]
+atlas = ExtResource("2_qdqwo")
 region = Rect2(48, 64, 48, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_uxa3w"]
-atlas = ExtResource("2_du1yl")
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8ypr"]
+atlas = ExtResource("2_qdqwo")
 region = Rect2(48, 96, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yopf"]
-atlas = ExtResource("2_du1yl")
+atlas = ExtResource("2_qdqwo")
 region = Rect2(48, 64, 48, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gjg"]
 size = Vector2(14, 12)
 
-[node name="WoodFactory" type="Area2D"]
-script = ExtResource("1_c6qfd")
-building_type = "wood"
-normal_texture = SubResource("AtlasTexture_v061q")
-hover_texture = SubResource("AtlasTexture_uxa3w")
+[node name="StoneFactory" type="Area2D"]
+script = ExtResource("1_k2na8")
+building_type = "stone"
+normal_texture = SubResource("AtlasTexture_g1udm")
+hover_texture = SubResource("AtlasTexture_n8ypr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, -9)
+position = Vector2(0, -9)
 texture = SubResource("AtlasTexture_2yopf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]

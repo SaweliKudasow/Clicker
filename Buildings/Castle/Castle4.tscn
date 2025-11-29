@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://bud3g2i5cddev"]
+
+[ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_4jot2"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_06mxu"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f1gjg"]
+atlas = ExtResource("2_06mxu")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnfc1"]
+atlas = ExtResource("2_06mxu")
+region = Rect2(192, 32, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yopf"]
+atlas = ExtResource("2_06mxu")
+region = Rect2(192, 0, 48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gjg"]
+size = Vector2(37, 24)
+
+[node name="Castle" type="Area2D"]
+script = ExtResource("1_4jot2")
+building_type = "castle"
+normal_texture = SubResource("AtlasTexture_f1gjg")
+hover_texture = SubResource("AtlasTexture_qnfc1")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_2yopf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -6)
+shape = SubResource("RectangleShape2D_f1gjg")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

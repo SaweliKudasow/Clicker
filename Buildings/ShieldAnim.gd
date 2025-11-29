@@ -1,6 +1,6 @@
 extends Node2D
 
-var offsets = [-1, -1, 1, 1] # цикл смещений
+var offsets := [-1, -1, 1, 1] # цикл смещений
 var index := 0
 
 func _ready():

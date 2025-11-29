@@ -1,34 +1,35 @@
-[gd_scene load_steps=7 format=3 uid="uid://cleft587sipe7"]
+[gd_scene load_steps=7 format=3 uid="uid://cy26usr6qdpam"]
 
-[ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_k2na8"]
-[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_qdqwo"]
+[ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_bwbng"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_y1vvg"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1udm"]
-atlas = ExtResource("2_qdqwo")
-region = Rect2(48, 64, 48, 32)
+atlas = ExtResource("2_y1vvg")
+region = Rect2(192, 64, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8ypr"]
-atlas = ExtResource("2_qdqwo")
-region = Rect2(48, 96, 48, 32)
+atlas = ExtResource("2_y1vvg")
+region = Rect2(192, 96, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yopf"]
-atlas = ExtResource("2_qdqwo")
-region = Rect2(48, 64, 48, 32)
+atlas = ExtResource("2_y1vvg")
+region = Rect2(192, 64, 48, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gjg"]
-size = Vector2(14, 12)
+size = Vector2(37, 21)
 
 [node name="StoneFactory" type="Area2D"]
-script = ExtResource("1_k2na8")
+script = ExtResource("1_bwbng")
 building_type = "stone"
 normal_texture = SubResource("AtlasTexture_g1udm")
 hover_texture = SubResource("AtlasTexture_n8ypr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(16, -9)
+position = Vector2(0, -9)
 texture = SubResource("AtlasTexture_2yopf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -4.5)
 shape = SubResource("RectangleShape2D_f1gjg")
 
 [node name="Timer" type="Timer" parent="."]

@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://4w1e17ousxou"]
+
+[ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_txnmd"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_effsf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v061q"]
+atlas = ExtResource("2_effsf")
+region = Rect2(240, 64, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uxa3w"]
+atlas = ExtResource("2_effsf")
+region = Rect2(240, 96, 48, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2yopf"]
+atlas = ExtResource("2_effsf")
+region = Rect2(240, 64, 48, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gjg"]
+size = Vector2(37, 30)
+
+[node name="WoodFactory" type="Area2D"]
+script = ExtResource("1_txnmd")
+building_type = "wood"
+normal_texture = SubResource("AtlasTexture_v061q")
+hover_texture = SubResource("AtlasTexture_uxa3w")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_2yopf")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -9)
+shape = SubResource("RectangleShape2D_f1gjg")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

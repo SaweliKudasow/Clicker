@@ -10,7 +10,7 @@ region = Rect2(0, 96, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a0bff"]
 atlas = ExtResource("1_6w8xc")
-region = Rect2(3, 128, 26, 4)
+region = Rect2(3, 133, 26, 4)
 
 [node name="Upgrade" type="Control"]
 layout_mode = 3
