@@ -1,0 +1,81 @@
+[gd_scene load_steps=9 format=3 uid="uid://dkhy3xf73vg4w"]
+
+[ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu.gd" id="1_xxa32"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_7p7kr"]
+[ext_resource type="Script" uid="uid://duhk6aaplq3x5" path="res://UpgradeButton.gd" id="3_7p7kr"]
+[ext_resource type="PackedScene" uid="uid://3by0jaf1i2cm" path="res://UpgradeCost.tscn" id="4_do5a3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a4xni"]
+atlas = ExtResource("2_7p7kr")
+region = Rect2(316, 149, 82, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s63oj"]
+atlas = ExtResource("2_7p7kr")
+region = Rect2(336, 32, 8, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s6tjf"]
+atlas = ExtResource("2_7p7kr")
+region = Rect2(336, 38, 8, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7optk"]
+atlas = ExtResource("2_7p7kr")
+region = Rect2(336, 38, 8, 5)
+
+[node name="UpgradeMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_right = 41.0
+offset_bottom = 23.0
+grow_horizontal = 2
+script = ExtResource("1_xxa32")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -41.0
+offset_right = 41.0
+offset_bottom = 23.0
+grow_horizontal = 2
+texture = SubResource("AtlasTexture_a4xni")
+stretch_mode = 2
+
+[node name="AutoGainButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 10.0
+offset_right = 10.0
+offset_bottom = 15.0
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_s63oj")
+texture_hover = SubResource("AtlasTexture_s6tjf")
+script = ExtResource("3_7p7kr")
+
+[node name="AutoSpeedButton" type="TextureButton" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 16.0
+offset_right = 10.0
+offset_bottom = 21.0
+mouse_filter = 1
+texture_normal = SubResource("AtlasTexture_s63oj")
+texture_hover = SubResource("AtlasTexture_7optk")
+script = ExtResource("3_7p7kr")
+
+[node name="UpgradeCost" parent="." instance=ExtResource("4_do5a3")]
+layout_mode = 0
+offset_left = -27.0
+offset_top = 3.0
+offset_right = -27.0
+offset_bottom = 3.0
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AutoGainButton" to="AutoGainButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AutoGainButton" to="AutoGainButton" method="_on_mouse_exited"]
+[connection signal="mouse_entered" from="AutoSpeedButton" to="AutoSpeedButton" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="AutoSpeedButton" to="AutoSpeedButton" method="_on_mouse_exited"]
