@@ -71,7 +71,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"default",
-"speed": 5.0
+"speed": 1.0
 }]
 
 [node name="ClickAnim" type="Node2D"]

@@ -77,5 +77,6 @@ offset_bottom = 3.0
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="ManualGainButton" to="ManualGainButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ManualGainButton" to="ManualGainButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="ManualGainButton" to="ManualGainButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="ManualSpeedButton" to="ManualSpeedButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="ManualSpeedButton" to="ManualSpeedButton" method="_on_mouse_exited"]

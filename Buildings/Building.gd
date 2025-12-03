@@ -3,12 +3,12 @@ extends Area2D
 @onready var sprite = $Sprite2D # изначальный спрайт
 @onready var timer = $Timer # таймер
 @onready var click_anim = get_node("../ClickAnim") # анимация клика
-# @onready var inventory = get_node("../Inventory") # интерфейс
+@onready var inventory = get_node("../Inventory") # инвентарь
 
-@export var is_castle: bool # тип здания
+@export var is_castle: bool # здание это замок?
 @export var normal_texture: Texture2D # обычная текстура
 @export var hover_texture: Texture2D # текстура обводки
-@export var upgrade_menu: Control
+@export var upgrade_menu: Control # меню апгрейда
 
 var upgrade_level := 0 # уровень здания
 
@@ -16,6 +16,8 @@ var mouse_over := false # находится ли мышка на здании
 
 func _ready():
 	sprite.texture = normal_texture
+	var delay = Upgrades.get_value("manual_speed")
+	timer.wait_time = delay
 
 func _on_mouse_entered():
 	sprite.texture = hover_texture
@@ -161,7 +163,8 @@ func _process(_delta):
 		#
 		#upgrade_menu.update_bar() # обновить бар
 
-#func _on_timer_timeout():
+func _on_timer_timeout():
+	inventory.add_value(self)
 	#if building_type == "wood":
 		#ui.add_wood() # добавляем дерево
 	#if building_type == "stone":
