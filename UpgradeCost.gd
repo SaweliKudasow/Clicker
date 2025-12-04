@@ -6,6 +6,11 @@ extends Control
 func show_cost(button_type):
 	var cost = Upgrades.get_cost(button_type)
 	
+	if cost["stone"] == -1:
+		stone_costs_view.text = "MAX"
+		wood_costs_view.text = "MAX"
+		return
+	
 	var stone_costs = int(stone_costs_view.text)
 	var wood_costs = int(wood_costs_view.text)
 	

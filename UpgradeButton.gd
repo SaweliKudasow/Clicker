@@ -25,7 +25,7 @@ func check_button_type():
 func _on_pressed():
 	var cost = Upgrades.get_cost(button_type)
 	
-	if cost["wood"] == -1:
+	if cost["stone"] == -1:
 		print("MAX LEVEL")
 		return
 	
@@ -42,5 +42,6 @@ func _on_pressed():
 		Upgrades.upgrade(button_type)
 		
 		print("New Level!:", Upgrades.get_level(button_type))
+		upgrade_cost.show_cost(button_type)
 	else:
 		print("Not enough materials")

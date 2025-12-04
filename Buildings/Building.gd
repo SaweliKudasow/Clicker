@@ -16,8 +16,6 @@ var mouse_over := false # находится ли мышка на здании
 
 func _ready():
 	sprite.texture = normal_texture
-	var delay = Upgrades.get_value("manual_speed")
-	timer.wait_time = delay
 
 func _on_mouse_entered():
 	sprite.texture = hover_texture
@@ -37,6 +35,9 @@ func _process(_delta):
 			#_on_mouse_exited()
 			#mouse_over = false
 		#return
+	
+	var delay = Upgrades.get_value("manual_speed")
+	timer.wait_time = delay
 	
 	# если курсор на здании и зажата лкм начает/останавливает таймер
 	if mouse_over == true and Input.is_action_pressed("click_left") and not is_castle:

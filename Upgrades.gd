@@ -5,22 +5,22 @@ var upgrades := {
 		"level": 0,
 		"values": [1, 2, 3, 4, 5, 6],
 		"costs": [
-			{"stone": 1, "wood": 1},
-			{"stone": 2, "wood": 2},
-			{"stone": 3, "wood": 3},
-			{"stone": 4, "wood": 4},
-			{"stone": 5, "wood": 5},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
 		],
 	},
 	"manual_speed": {
 		"level": 0,
 		"values": [9, 8, 7, 6, 5, 4],
 		"costs": [
-			{"stone": 1, "wood": 1},
-			{"stone": 2, "wood": 2},
-			{"stone": 3, "wood": 3},
-			{"stone": 4, "wood": 4},
-			{"stone": 5, "wood": 5},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
+			{"stone": 0, "wood": 0},
 		]
 	}
 }
@@ -29,7 +29,7 @@ func get_cost(type: String) -> Dictionary:
 	var lvl = upgrades[type]["level"]
 	var costs = upgrades[type]["costs"]
 	
-	if lvl > costs.size():
+	if lvl >= costs.size():
 		return {"stone": -1, "wood": -1}
 	
 	return costs[lvl]
