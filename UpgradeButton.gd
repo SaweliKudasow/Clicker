@@ -4,12 +4,14 @@ extends TextureButton
 @onready var upgrade_cost := $"../UpgradeCost"
 @onready var inventory := $"../../../Inventory"
 @onready var button_type
+@onready var is_max = false
 
 func _ready():
 	upgrade_cost.hide()
 
 func _on_mouse_entered():
-	upgrade_cost.show()
+	if not is_max:
+		upgrade_cost.show()
 	check_button_type()
 
 func _on_mouse_exited():
@@ -23,10 +25,12 @@ func check_button_type():
 	upgrade_cost.show_cost(button_type)
 
 func _on_pressed():
-	var cost = Upgrades.get_cost(button_type)
+	var cost = Upgrades.get_cost(HoveredBuilding.building, button_type)
 	
 	if cost["stone"] == -1:
 		print("MAX LEVEL")
+		is_max = true
+		upgrade_cost.hide()
 		return
 	
 	var stone_cost = int(inventory.stone.text)
@@ -39,9 +43,9 @@ func _on_pressed():
 		inventory.stone.text = str(stone_cost)
 		inventory.wood.text = str(wood_cost)
 		
-		Upgrades.upgrade(button_type)
+		Upgrades.upgrade(HoveredBuilding.building, button_type)
 		
-		print("New Level!:", Upgrades.get_level(button_type))
+		print("New Level!:", Upgrades.get_level(HoveredBuilding.building, button_type))
 		upgrade_cost.show_cost(button_type)
 	else:
 		print("Not enough materials")

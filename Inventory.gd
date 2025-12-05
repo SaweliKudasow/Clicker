@@ -31,7 +31,7 @@ func add_value(node):
 	if node.name == "WoodFactory":
 		building_type = wood
 	
-	var gain = Upgrades.get_value("manual_gain") # текущий мануальный доход
+	var gain = Upgrades.get_value(HoveredBuilding.building, "manual_gain") # текущий мануальный доход
 	
 	var value = int(building_type.text) # превращаем текст в число
 	value += gain # добавляем валюту

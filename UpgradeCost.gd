@@ -4,7 +4,7 @@ extends Control
 @onready var wood_costs_view = $TextureRect/Wood
 
 func show_cost(button_type):
-	var cost = Upgrades.get_cost(button_type)
+	var cost = Upgrades.get_cost(HoveredBuilding.building, button_type)
 	
 	if cost["stone"] == -1:
 		stone_costs_view.text = "MAX"
