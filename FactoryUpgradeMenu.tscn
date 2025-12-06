@@ -1,9 +1,10 @@
-[gd_scene load_steps=9 format=3 uid="uid://cb6ge7vjvytde"]
+[gd_scene load_steps=12 format=3 uid="uid://cb6ge7vjvytde"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_6w8xc"]
 [ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu.gd" id="1_s63oj"]
 [ext_resource type="Script" uid="uid://duhk6aaplq3x5" path="res://UpgradeButton.gd" id="3_670fu"]
 [ext_resource type="PackedScene" uid="uid://3by0jaf1i2cm" path="res://UpgradeCost.tscn" id="4_gd12q"]
+[ext_resource type="PackedScene" uid="uid://ca53xf0yu0a02" path="res://UpdateBar.tscn" id="5_gd12q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4xni"]
 atlas = ExtResource("1_6w8xc")
@@ -13,9 +14,17 @@ region = Rect2(316, 126, 82, 23)
 atlas = ExtResource("1_6w8xc")
 region = Rect2(336, 32, 8, 5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_670fu"]
+atlas = ExtResource("1_6w8xc")
+region = Rect2(336, 44, 8, 5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6tjf"]
 atlas = ExtResource("1_6w8xc")
 region = Rect2(336, 38, 8, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gd12q"]
+atlas = ExtResource("1_6w8xc")
+region = Rect2(336, 44, 8, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7optk"]
 atlas = ExtResource("1_6w8xc")
@@ -30,6 +39,7 @@ offset_left = -41.0
 offset_right = 41.0
 offset_bottom = 23.0
 grow_horizontal = 2
+mouse_filter = 1
 script = ExtResource("1_s63oj")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -52,6 +62,7 @@ offset_right = 10.0
 offset_bottom = 15.0
 mouse_filter = 1
 texture_normal = SubResource("AtlasTexture_s63oj")
+texture_pressed = SubResource("AtlasTexture_670fu")
 texture_hover = SubResource("AtlasTexture_s6tjf")
 script = ExtResource("3_670fu")
 
@@ -63,8 +74,25 @@ offset_right = 10.0
 offset_bottom = 21.0
 mouse_filter = 1
 texture_normal = SubResource("AtlasTexture_s63oj")
+texture_pressed = SubResource("AtlasTexture_gd12q")
 texture_hover = SubResource("AtlasTexture_7optk")
 script = ExtResource("3_670fu")
+
+[node name="ManualGainBar" parent="." instance=ExtResource("5_gd12q")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -50.0
+offset_bottom = -8.0
+bar_type = "manual_gain"
+
+[node name="ManualSpeedBar" parent="." instance=ExtResource("5_gd12q")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 16.0
+offset_right = -50.0
+offset_bottom = -2.0
+bar_type = "manual_speed"
 
 [node name="UpgradeCost" parent="." instance=ExtResource("4_gd12q")]
 layout_mode = 0

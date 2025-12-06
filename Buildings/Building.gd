@@ -15,7 +15,6 @@ var mouse_over := false # находится ли мышка на здании
 
 func _ready():
 	sprite.texture = normal_texture
-	# progress_bar.hide()
 
 func _on_mouse_entered():
 	sprite.texture = hover_texture
@@ -39,7 +38,6 @@ func _process(_delta):
 	#if upgrade_menu.visible and upgrade_menu.get_global_rect().has_point(mouse_pos):
 		#if mouse_over:
 			#_on_mouse_exited()
-			#mouse_over = false
 		#return
 	
 	var delay = Upgrades.get_value(HoveredBuilding.building, "manual_speed")

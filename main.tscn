@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://bhtcj5wwx6j7c"]
+[gd_scene load_steps=17 format=4 uid="uid://bhtcj5wwx6j7c"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory1.tscn" id="2_03owx"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://dij3roo8lyww6" path="res://Inventory.tscn" id="8_j4qnp"]
 [ext_resource type="PackedScene" uid="uid://dkhy3xf73vg4w" path="res://CastleUpgradeMenu.tscn" id="8_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://cb6ge7vjvytde" path="res://FactoryUpgradeMenu.tscn" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://kfs22yxexr8v" path="res://Cursor.tscn" id="12_5vvyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -71,10 +72,11 @@ progress_bar = NodePath("ProgressBar")
 visible = false
 position = Vector2(0, -17)
 
-[node name="UpgradeMenu" parent="StoneFactory" instance=ExtResource("9_03owx")]
+[node name="UpgradeMenu" parent="StoneFactory" node_paths=PackedStringArray("building") instance=ExtResource("9_03owx")]
 visible = false
 offset_top = 6.0
 offset_bottom = 29.0
+building = NodePath("..")
 
 [node name="ProgressBar" parent="StoneFactory" instance=ExtResource("5_20pc6")]
 visible = false
@@ -92,10 +94,11 @@ progress_bar = NodePath("ProgressBar")
 visible = false
 position = Vector2(0, -17)
 
-[node name="UpgradeMenu" parent="WoodFactory" instance=ExtResource("9_03owx")]
+[node name="UpgradeMenu" parent="WoodFactory" node_paths=PackedStringArray("building") instance=ExtResource("9_03owx")]
 visible = false
 offset_top = 6.0
 offset_bottom = 29.0
+building = NodePath("..")
 
 [node name="ProgressBar" parent="WoodFactory" instance=ExtResource("5_20pc6")]
 visible = false
@@ -118,3 +121,6 @@ offset_bottom = 29.0
 top_level = true
 
 [node name="Inventory" parent="." instance=ExtResource("8_j4qnp")]
+
+[node name="Cursor" parent="." instance=ExtResource("12_5vvyt")]
+top_level = true

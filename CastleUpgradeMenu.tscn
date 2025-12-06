@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dkhy3xf73vg4w"]
+[gd_scene load_steps=11 format=3 uid="uid://dkhy3xf73vg4w"]
 
 [ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu.gd" id="1_xxa32"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_7p7kr"]
@@ -13,9 +13,17 @@ region = Rect2(316, 149, 82, 23)
 atlas = ExtResource("2_7p7kr")
 region = Rect2(336, 32, 8, 5)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_do5a3"]
+atlas = ExtResource("2_7p7kr")
+region = Rect2(336, 44, 8, 5)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_s6tjf"]
 atlas = ExtResource("2_7p7kr")
 region = Rect2(336, 38, 8, 5)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6qr5e"]
+atlas = ExtResource("2_7p7kr")
+region = Rect2(336, 44, 8, 5)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_7optk"]
 atlas = ExtResource("2_7p7kr")
@@ -52,6 +60,7 @@ offset_right = 10.0
 offset_bottom = 15.0
 mouse_filter = 1
 texture_normal = SubResource("AtlasTexture_s63oj")
+texture_pressed = SubResource("AtlasTexture_do5a3")
 texture_hover = SubResource("AtlasTexture_s6tjf")
 script = ExtResource("3_7p7kr")
 
@@ -63,6 +72,7 @@ offset_right = 10.0
 offset_bottom = 21.0
 mouse_filter = 1
 texture_normal = SubResource("AtlasTexture_s63oj")
+texture_pressed = SubResource("AtlasTexture_6qr5e")
 texture_hover = SubResource("AtlasTexture_7optk")
 script = ExtResource("3_7p7kr")
 
@@ -72,6 +82,7 @@ offset_left = -27.0
 offset_top = 3.0
 offset_right = -27.0
 offset_bottom = 3.0
+mouse_filter = 1
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

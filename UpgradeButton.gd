@@ -45,6 +45,11 @@ func _on_pressed():
 		
 		Upgrades.upgrade(HoveredBuilding.building, button_type)
 		
+		var level = Upgrades.get_level(HoveredBuilding.building, button_type)
+		if level == 10:
+			is_max = true
+			upgrade_cost.hide()
+		
 		print("New Level!:", Upgrades.get_level(HoveredBuilding.building, button_type))
 		upgrade_cost.show_cost(button_type)
 	else:
