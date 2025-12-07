@@ -68,7 +68,41 @@ var upgrades := {
 				{"stone": 0, "wood": 0},
 			]
 		}
-	}
+	},
+	"Castle": {
+		"auto_gain": {
+			"level": 0,
+			"values": [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11],
+			"costs": [
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+			],
+		},
+		"auto_speed": {
+			"level": 0,
+			"values": [9.0, 8.5, 8.0, 7.5, 7.0, 6.5, 6.0, 5.5, 5.0, 4.5, 4.0],
+			"costs": [
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+				{"stone": 0, "wood": 0},
+			]
+		}
+	},
 }
 
 func get_cost(building: String, type: String) -> Dictionary:

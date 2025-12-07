@@ -22,6 +22,8 @@ var region_size = Vector2(21, 5)
 func _ready():
 	rect.texture = rect.texture.duplicate()
 
-func _process(_delta):
+func update():
+	#if HoveredBuilding.building == "Castle":
+		#return
 	var level = Upgrades.get_level(HoveredBuilding.building, bar_type)
 	rect.texture.region = Rect2(bar_upgrades[level], region_size)

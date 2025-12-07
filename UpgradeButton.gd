@@ -5,6 +5,7 @@ extends TextureButton
 @onready var inventory := $"../../../Inventory"
 @onready var button_type
 @onready var is_max = false
+@export var update_bar: Control
 
 func _ready():
 	upgrade_cost.hide()
@@ -22,6 +23,10 @@ func check_button_type():
 		button_type = "manual_gain"
 	if button.name == "ManualSpeedButton":
 		button_type = "manual_speed"
+	if button.name == "AutoGainButton":
+		button_type = "auto_gain"
+	if button.name == "AutoSpeedButton":
+		button_type = "auto_speed"
 	upgrade_cost.show_cost(button_type)
 
 func _on_pressed():
@@ -52,5 +57,6 @@ func _on_pressed():
 		
 		print("New Level!:", Upgrades.get_level(HoveredBuilding.building, button_type))
 		upgrade_cost.show_cost(button_type)
+		update_bar.update()
 	else:
 		print("Not enough materials")

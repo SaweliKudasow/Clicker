@@ -39,9 +39,9 @@ func _process(_delta):
 		#if mouse_over:
 			#_on_mouse_exited()
 		#return
-	
-	var delay = Upgrades.get_value(HoveredBuilding.building, "manual_speed")
-	timer.wait_time = delay
+	if not HoveredBuilding.building == "Castle":
+		var delay = Upgrades.get_value(HoveredBuilding.building, "manual_speed")
+		timer.wait_time = delay
 	
 	# если курсор на здании и зажата лкм начает/останавливает таймер
 	if mouse_over == true and Input.is_action_pressed("click_left") and not is_castle:

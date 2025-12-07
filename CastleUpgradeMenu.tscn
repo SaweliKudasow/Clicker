@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dkhy3xf73vg4w"]
+[gd_scene load_steps=12 format=3 uid="uid://dkhy3xf73vg4w"]
 
 [ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu.gd" id="1_xxa32"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_7p7kr"]
 [ext_resource type="Script" uid="uid://duhk6aaplq3x5" path="res://UpgradeButton.gd" id="3_7p7kr"]
 [ext_resource type="PackedScene" uid="uid://3by0jaf1i2cm" path="res://UpgradeCost.tscn" id="4_do5a3"]
+[ext_resource type="PackedScene" uid="uid://ca53xf0yu0a02" path="res://UpdateBar.tscn" id="5_6qr5e"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4xni"]
 atlas = ExtResource("2_7p7kr")
@@ -52,7 +53,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_a4xni")
 stretch_mode = 2
 
-[node name="AutoGainButton" type="TextureButton" parent="."]
+[node name="AutoGainButton" type="TextureButton" parent="." node_paths=PackedStringArray("update_bar")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 10.0
@@ -63,8 +64,9 @@ texture_normal = SubResource("AtlasTexture_s63oj")
 texture_pressed = SubResource("AtlasTexture_do5a3")
 texture_hover = SubResource("AtlasTexture_s6tjf")
 script = ExtResource("3_7p7kr")
+update_bar = NodePath("../AutoGainBar")
 
-[node name="AutoSpeedButton" type="TextureButton" parent="."]
+[node name="AutoSpeedButton" type="TextureButton" parent="." node_paths=PackedStringArray("update_bar")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 16.0
@@ -75,6 +77,23 @@ texture_normal = SubResource("AtlasTexture_s63oj")
 texture_pressed = SubResource("AtlasTexture_6qr5e")
 texture_hover = SubResource("AtlasTexture_7optk")
 script = ExtResource("3_7p7kr")
+update_bar = NodePath("../AutoSpeedBar")
+
+[node name="AutoGainBar" parent="." instance=ExtResource("5_6qr5e")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 10.0
+offset_right = -71.0
+offset_bottom = -13.0
+bar_type = "auto_gain"
+
+[node name="AutoSpeedBar" parent="." instance=ExtResource("5_6qr5e")]
+layout_mode = 1
+offset_left = 11.0
+offset_top = 16.0
+offset_right = -71.0
+offset_bottom = -7.0
+bar_type = "auto_speed"
 
 [node name="UpgradeCost" parent="." instance=ExtResource("4_do5a3")]
 layout_mode = 0
@@ -88,5 +107,7 @@ mouse_filter = 1
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
 [connection signal="mouse_entered" from="AutoGainButton" to="AutoGainButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AutoGainButton" to="AutoGainButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="AutoGainButton" to="AutoGainButton" method="_on_pressed"]
 [connection signal="mouse_entered" from="AutoSpeedButton" to="AutoSpeedButton" method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="AutoSpeedButton" to="AutoSpeedButton" method="_on_mouse_exited"]
+[connection signal="pressed" from="AutoSpeedButton" to="AutoSpeedButton" method="_on_pressed"]

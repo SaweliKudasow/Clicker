@@ -1,0 +1,29 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvdl1lweicry7"]
+
+[ext_resource type="Script" uid="uid://b417rhgel5tr3" path="res://CastleProgressBar.gd" id="1_emosh"]
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_10e4f"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gerdw"]
+atlas = ExtResource("2_10e4f")
+region = Rect2(352, 72, 12, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnb7r"]
+atlas = ExtResource("2_10e4f")
+region = Rect2(352, 64, 12, 4)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3yw6"]
+atlas = ExtResource("2_10e4f")
+region = Rect2(352, 68, 12, 4)
+
+[node name="CastleProgressBar" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_emosh")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 12.0
+offset_bottom = 4.0
+texture_under = SubResource("AtlasTexture_gerdw")
+texture_over = SubResource("AtlasTexture_cnb7r")
+texture_progress = SubResource("AtlasTexture_n3yw6")

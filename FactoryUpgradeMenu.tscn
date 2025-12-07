@@ -54,7 +54,7 @@ grow_horizontal = 2
 texture = SubResource("AtlasTexture_a4xni")
 stretch_mode = 2
 
-[node name="ManualGainButton" type="TextureButton" parent="."]
+[node name="ManualGainButton" type="TextureButton" parent="." node_paths=PackedStringArray("update_bar")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 10.0
@@ -65,8 +65,9 @@ texture_normal = SubResource("AtlasTexture_s63oj")
 texture_pressed = SubResource("AtlasTexture_670fu")
 texture_hover = SubResource("AtlasTexture_s6tjf")
 script = ExtResource("3_670fu")
+update_bar = NodePath("../ManualGainBar")
 
-[node name="ManualSpeedButton" type="TextureButton" parent="."]
+[node name="ManualSpeedButton" type="TextureButton" parent="." node_paths=PackedStringArray("update_bar")]
 layout_mode = 0
 offset_left = 2.0
 offset_top = 16.0
@@ -77,6 +78,7 @@ texture_normal = SubResource("AtlasTexture_s63oj")
 texture_pressed = SubResource("AtlasTexture_gd12q")
 texture_hover = SubResource("AtlasTexture_7optk")
 script = ExtResource("3_670fu")
+update_bar = NodePath("../ManualSpeedBar")
 
 [node name="ManualGainBar" parent="." instance=ExtResource("5_gd12q")]
 layout_mode = 1
