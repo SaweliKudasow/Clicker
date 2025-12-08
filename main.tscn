@@ -47,6 +47,9 @@ texture = ExtResource("1_trn2v")
 3:12/0 = 0
 2:12/0 = 0
 1:12/0 = 0
+1:13/0 = 0
+2:13/0 = 0
+3:13/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_lquwl"]
 sources/0 = SubResource("TileSetAtlasSource_1bvp3")
@@ -62,6 +65,7 @@ tile_map_data = PackedByteArray("AAAAAAgAAAACAAwAAAABAAgAAAACAAwAAAACAAgAAAACAAw
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="."]
+tile_map_data = PackedByteArray("AAADAAoAAAABAA0AAAAIAAkAAAABAA0AAAARAAoAAAABAA0AAAANAAkAAAACAA0AAAABAAkAAAACAA0AAAAKAAoAAAADAA0AAAATAAkAAAADAA0AAAAGAAoAAAADAA0AAAAFAAkAAAACAA0AAAAAAAoAAAADAA0AAAAPAAoAAAACAA0AAAA=")
 tile_set = SubResource("TileSet_lquwl")
 
 [node name="StoneFactory" parent="." node_paths=PackedStringArray("upgrade_menu", "progress_bar") instance=ExtResource("2_03owx")]
