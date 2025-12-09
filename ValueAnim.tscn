@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://bo0s713oaiwad"]
+
+[ext_resource type="Script" uid="uid://i8u2bo37huiv" path="res://ValueAnim.gd" id="1_kkcl6"]
+[ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_nnuas"]
+
+[node name="ValueAnim" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kkcl6")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 8.0
+offset_bottom = 4.0
+theme_override_fonts/font = ExtResource("2_nnuas")
+theme_override_font_sizes/font_size = 4
+text = "+1"

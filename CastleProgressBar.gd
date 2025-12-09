@@ -3,6 +3,8 @@ extends Control
 @onready var duration = Upgrades.get_value("Castle", "auto_speed")
 @onready var inventory = $"../../Inventory"
 
+@export var value_anim: Control
+
 @onready var bar := $TextureProgressBar
 var tween: Tween
 
@@ -30,6 +32,8 @@ func start_bar():
 func _on_fill_complete():
 	#var node = "Castle"
 	#inventory.add_value(node)
+	var type = "auto_gain"
+	value_anim.start_anim(type)
 	var gain1 = Upgrades.get_value("Castle", "auto_gain") # текущий автоматический доход
 	
 	var value1 = int(inventory.stone.text)

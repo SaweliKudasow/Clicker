@@ -1,6 +1,7 @@
 extends Control
 
 var is_pressed := false
+@export var value_anim: Control
 
 @onready var duration = Upgrades.get_value(HoveredBuilding.building, "manual_speed")
 
@@ -24,6 +25,8 @@ func start_bar():
 
 
 func _on_fill_complete():
+	var type = "manual_gain"
+	value_anim.start_anim(type)
 	if is_pressed:
 		start_bar() # запускаем заново
 	else:
