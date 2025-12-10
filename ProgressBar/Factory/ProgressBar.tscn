@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://deqvvp2va2pq4"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_0xgol"]
-[ext_resource type="Script" uid="uid://ddfn6yatyuq7b" path="res://ProgressBar.gd" id="1_dwfyx"]
+[ext_resource type="Script" uid="uid://ddfn6yatyuq7b" path="res://ProgressBar/Factory/ProgressBar.gd" id="1_dwfyx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4xpuq"]
 atlas = ExtResource("1_0xgol")

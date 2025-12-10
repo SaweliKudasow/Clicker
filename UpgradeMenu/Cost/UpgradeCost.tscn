@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://3by0jaf1i2cm"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_2cr1f"]
-[ext_resource type="Script" uid="uid://dcgrsloalahgv" path="res://UpgradeCost.gd" id="1_ys21x"]
+[ext_resource type="Script" uid="uid://dcgrsloalahgv" path="res://UpgradeMenu/Cost/UpgradeCost.gd" id="1_ys21x"]
 [ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_ys21x"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l2g8m"]

@@ -30,6 +30,9 @@ func check_button_type():
 	upgrade_cost.show_cost(button_type)
 
 func _on_pressed():
+	$"../../../ClickSound".stop()
+	$"../../../ClickSound".play()
+	
 	var cost = Upgrades.get_cost(HoveredBuilding.building, button_type)
 	
 	if cost["stone"] == -1:

@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo0s713oaiwad"]
 
-[ext_resource type="Script" uid="uid://i8u2bo37huiv" path="res://ValueAnim.gd" id="1_kkcl6"]
+[ext_resource type="Script" uid="uid://i8u2bo37huiv" path="res://IncomeAnim/ValueAnim.gd" id="1_kkcl6"]
 [ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_nnuas"]
 
 [node name="ValueAnim" type="Control"]

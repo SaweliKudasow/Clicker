@@ -1,10 +1,10 @@
 [gd_scene load_steps=12 format=3 uid="uid://cb6ge7vjvytde"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_6w8xc"]
-[ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu.gd" id="1_s63oj"]
-[ext_resource type="Script" uid="uid://duhk6aaplq3x5" path="res://UpgradeButton.gd" id="3_670fu"]
-[ext_resource type="PackedScene" uid="uid://3by0jaf1i2cm" path="res://UpgradeCost.tscn" id="4_gd12q"]
-[ext_resource type="PackedScene" uid="uid://ca53xf0yu0a02" path="res://UpdateBar.tscn" id="5_gd12q"]
+[ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu/UpgradeMenu.gd" id="1_s63oj"]
+[ext_resource type="Script" uid="uid://duhk6aaplq3x5" path="res://UpgradeMenu/Button/UpgradeButton.gd" id="3_670fu"]
+[ext_resource type="PackedScene" uid="uid://3by0jaf1i2cm" path="res://UpgradeMenu/Cost/UpgradeCost.tscn" id="4_gd12q"]
+[ext_resource type="PackedScene" uid="uid://ca53xf0yu0a02" path="res://UpgradeMenu/Bar/UpdateBar.tscn" id="5_gd12q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4xni"]
 atlas = ExtResource("1_6w8xc")

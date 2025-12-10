@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://kfs22yxexr8v"]
 
-[ext_resource type="Script" uid="uid://cr2af2aekcobf" path="res://Cursor.gd" id="1_e3af5"]
+[ext_resource type="Script" uid="uid://cr2af2aekcobf" path="res://CustomCursor/Cursor.gd" id="1_e3af5"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_lxfbd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ssxug"]

@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ca53xf0yu0a02"]
 
-[ext_resource type="Script" uid="uid://bjedd2b02dtj3" path="res://UpdateBar.gd" id="1_wddil"]
+[ext_resource type="Script" uid="uid://bjedd2b02dtj3" path="res://UpgradeMenu/Bar/UpdateBar.gd" id="1_wddil"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_bni16"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_hupkp"]

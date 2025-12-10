@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dij3roo8lyww6"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_b3bc3"]
-[ext_resource type="Script" uid="uid://bfbs3oh4ommj5" path="res://Inventory.gd" id="1_g6l6n"]
+[ext_resource type="Script" uid="uid://bfbs3oh4ommj5" path="res://Inventory/Inventory.gd" id="1_g6l6n"]
 [ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_3b2b5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b2b5"]

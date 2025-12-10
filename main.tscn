@@ -1,19 +1,20 @@
-[gd_scene load_steps=19 format=4 uid="uid://bhtcj5wwx6j7c"]
+[gd_scene load_steps=20 format=4 uid="uid://bhtcj5wwx6j7c"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory1.tscn" id="2_03owx"]
 [ext_resource type="PackedScene" uid="uid://el1lxai1lm3t" path="res://Buildings/StoneFactory/Shield.tscn" id="3_wkp8b"]
 [ext_resource type="PackedScene" uid="uid://dyt558qb37qqn" path="res://Buildings/WoodFactory/WoodFactory1.tscn" id="4_20pc6"]
 [ext_resource type="PackedScene" uid="uid://d2ue4g6chg771" path="res://Buildings/WoodFactory/Shield.tscn" id="5_5vvyt"]
-[ext_resource type="PackedScene" uid="uid://deqvvp2va2pq4" path="res://ProgressBar.tscn" id="5_20pc6"]
-[ext_resource type="PackedScene" uid="uid://bo0s713oaiwad" path="res://ValueAnim.tscn" id="6_c2ibq"]
+[ext_resource type="PackedScene" uid="uid://deqvvp2va2pq4" path="res://ProgressBar/Factory/ProgressBar.tscn" id="5_20pc6"]
+[ext_resource type="PackedScene" uid="uid://bo0s713oaiwad" path="res://IncomeAnim/ValueAnim.tscn" id="6_c2ibq"]
 [ext_resource type="PackedScene" uid="uid://gem0wpg42k72" path="res://Buildings/Castle/Castle1.tscn" id="6_c6i3y"]
 [ext_resource type="PackedScene" uid="uid://fbyd2je75paa" path="res://ClickAnim/ClickAnim.tscn" id="7_c2ibq"]
-[ext_resource type="PackedScene" uid="uid://dij3roo8lyww6" path="res://Inventory.tscn" id="8_j4qnp"]
-[ext_resource type="PackedScene" uid="uid://dkhy3xf73vg4w" path="res://CastleUpgradeMenu.tscn" id="8_wkp8b"]
-[ext_resource type="PackedScene" uid="uid://cb6ge7vjvytde" path="res://FactoryUpgradeMenu.tscn" id="9_03owx"]
-[ext_resource type="PackedScene" uid="uid://cvdl1lweicry7" path="res://CastleProgressBar.tscn" id="10_c6i3y"]
-[ext_resource type="PackedScene" uid="uid://kfs22yxexr8v" path="res://Cursor.tscn" id="12_5vvyt"]
+[ext_resource type="PackedScene" uid="uid://dij3roo8lyww6" path="res://Inventory/Inventory.tscn" id="8_j4qnp"]
+[ext_resource type="PackedScene" uid="uid://dkhy3xf73vg4w" path="res://UpgradeMenu/CastleUpgradeMenu.tscn" id="8_wkp8b"]
+[ext_resource type="PackedScene" uid="uid://cb6ge7vjvytde" path="res://UpgradeMenu/FactoryUpgradeMenu.tscn" id="9_03owx"]
+[ext_resource type="PackedScene" uid="uid://cvdl1lweicry7" path="res://ProgressBar/Castle/CastleProgressBar.tscn" id="10_c6i3y"]
+[ext_resource type="PackedScene" uid="uid://kfs22yxexr8v" path="res://CustomCursor/Cursor.tscn" id="12_5vvyt"]
+[ext_resource type="AudioStream" uid="uid://drafbouw6c75p" path="res://Resources/Sounds/ClickSound.mp3" id="15_j4qnp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -156,3 +157,7 @@ top_level = true
 
 [node name="Cursor" parent="." instance=ExtResource("12_5vvyt")]
 top_level = true
+
+[node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("15_j4qnp")
+volume_db = 24.0

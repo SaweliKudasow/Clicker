@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://cvdl1lweicry7"]
 
-[ext_resource type="Script" uid="uid://b417rhgel5tr3" path="res://CastleProgressBar.gd" id="1_emosh"]
+[ext_resource type="Script" uid="uid://b417rhgel5tr3" path="res://ProgressBar/Castle/CastleProgressBar.gd" id="1_emosh"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_10e4f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_gerdw"]
