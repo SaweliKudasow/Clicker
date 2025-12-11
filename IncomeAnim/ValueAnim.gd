@@ -7,8 +7,8 @@ extends Control
 func _ready():
 	$Label.hide()
 
-func start_anim(type):
-	var value = Upgrades.get_value(HoveredBuilding.building, type)
+func start_anim(building, type):
+	var value = Upgrades.get_value(building, type)
 	$Label.text = "+" + str(value)
 	$Label.show()
 	

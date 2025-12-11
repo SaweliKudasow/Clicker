@@ -32,8 +32,9 @@ func start_bar():
 func _on_fill_complete():
 	#var node = "Castle"
 	#inventory.add_value(node)
+	var building = "Castle"
 	var type = "auto_gain"
-	value_anim.start_anim(type)
+	value_anim.start_anim(building, type)
 	var gain1 = Upgrades.get_value("Castle", "auto_gain") # текущий автоматический доход
 	
 	var value1 = int(inventory.stone.text)

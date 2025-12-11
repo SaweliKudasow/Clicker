@@ -19,6 +19,7 @@ func _ready():
 func _on_mouse_entered():
 	sprite.texture = hover_texture
 	mouse_over = true
+	#if not upgrade_menu.cursor_inside:
 	upgrade_menu.show()
 	HoveredBuilding.building = self.name
 	print(HoveredBuilding.building)
@@ -28,11 +29,16 @@ func _on_mouse_entered():
 func _on_mouse_exited():
 	sprite.texture = normal_texture
 	mouse_over = false
-	upgrade_menu.hide()
+	if not upgrade_menu.cursor_inside:
+		upgrade_menu.hide()
 	if not is_castle:
 		progress_bar.hide()
 
 func _process(_delta):
+	if upgrade_menu.cursor_inside:
+		upgrade_menu.show()
+		_on_mouse_exited()
+	
 	#var mouse_pos = get_global_mouse_position()
 	#
 	#if upgrade_menu.visible and upgrade_menu.get_global_rect().has_point(mouse_pos):

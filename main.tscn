@@ -128,7 +128,6 @@ offset_bottom = -8.0
 
 [node name="Castle" parent="." node_paths=PackedStringArray("upgrade_menu") instance=ExtResource("6_c6i3y")]
 position = Vector2(162, 122)
-is_castle = true
 upgrade_menu = NodePath("UpgradeMenu")
 
 [node name="UpgradeMenu" parent="Castle" instance=ExtResource("8_wkp8b")]

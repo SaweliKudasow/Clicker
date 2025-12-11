@@ -26,7 +26,7 @@ func start_bar():
 
 func _on_fill_complete():
 	var type = "manual_gain"
-	value_anim.start_anim(type)
+	value_anim.start_anim(HoveredBuilding.building, type)
 	if is_pressed:
 		start_bar() # запускаем заново
 	else:
