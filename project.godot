@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Upgrades="*res://Upgrades.gd"
 HoveredBuilding="*res://HoveredBuilding.gd"
+GameData="*res://GameData.gd"
 
 [display]
 

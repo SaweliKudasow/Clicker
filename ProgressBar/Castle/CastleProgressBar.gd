@@ -45,4 +45,5 @@ func _on_fill_complete():
 	value2 += gain1
 	inventory.wood.text = str(value2)
 	
+	GameData.save_resources()
 	start_bar() # запускаем заново

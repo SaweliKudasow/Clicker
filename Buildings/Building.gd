@@ -23,6 +23,7 @@ func _on_mouse_entered():
 	upgrade_menu.show()
 	HoveredBuilding.building = self.name
 	print(HoveredBuilding.building)
+	upgrade_menu.update_bar()
 	if not is_castle:
 		progress_bar.show()
 

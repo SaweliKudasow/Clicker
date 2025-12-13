@@ -35,11 +35,15 @@ var region_size = Vector2(21, 5)
 func _ready():
 	rect.texture = rect.texture.duplicate()
 
-func update():
+func update(up):
 	var level = Upgrades.get_level(HoveredBuilding.building, bar_type)
-	for i in range(3):
-		rect.texture.region = Rect2(bar_upgrade_anim[level - 1], region_size)
-		await get_tree().create_timer(0.1).timeout
-		
+	
+	if up:
+		for i in range(3):
+			rect.texture.region = Rect2(bar_upgrade_anim[level - 1], region_size)
+			await get_tree().create_timer(0.1).timeout
+			
+			rect.texture.region = Rect2(bar_upgrades[level], region_size)
+			await get_tree().create_timer(0.1).timeout
+	else:
 		rect.texture.region = Rect2(bar_upgrades[level], region_size)
-		await get_tree().create_timer(0.1).timeout

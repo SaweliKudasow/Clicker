@@ -14,6 +14,8 @@ func _on_mouse_entered():
 	if not is_max:
 		upgrade_cost.show()
 	check_button_type()
+	#var up = false
+	#update_bar.update(up)
 
 func _on_mouse_exited():
 	upgrade_cost.hide()
@@ -47,6 +49,7 @@ func _on_pressed():
 	if stone_cost >= cost["stone"] and wood_cost >= cost["wood"]:
 		stone_cost -= cost["stone"]
 		wood_cost -= cost["wood"]
+		var up = true
 		
 		inventory.stone.text = str(stone_cost)
 		inventory.wood.text = str(wood_cost)
@@ -60,6 +63,7 @@ func _on_pressed():
 		
 		print("New Level!:", Upgrades.get_level(HoveredBuilding.building, button_type))
 		upgrade_cost.show_cost(button_type)
-		update_bar.update()
+		update_bar.update(up)
+		GameData.save_upgrades()
 	else:
 		print("Not enough materials")
