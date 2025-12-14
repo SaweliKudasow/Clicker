@@ -1,6 +1,6 @@
 extends Node
 
-@onready var inventory = $Inventory
+var inventory: Control = null
 
 func save_upgrades():
 	var file = FileAccess.open("user://upgrades.save", FileAccess.WRITE)
@@ -26,8 +26,14 @@ func load_resources():
 		inventory.stone.text = str(data.get("stone", 0))
 		inventory.wood.text = str(data.get("wood", 0))
 
+func reset():
+	if FileAccess.file_exists("user://upgrades.save"):
+		DirAccess.remove_absolute("user://upgrades.save")
+	
+	if FileAccess.file_exists("user://resources.save"):
+		DirAccess.remove_absolute("user://resources.save")
+	
+	Upgrades.upgrades = Upgrades.get_default_upgrades()
+
 func _ready():
-	await get_tree().process_frame
-	print(inventory)
 	load_upgrades()
-	load_resources()

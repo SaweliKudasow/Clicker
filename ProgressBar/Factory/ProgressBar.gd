@@ -3,7 +3,7 @@ extends Control
 var is_pressed := false
 @export var value_anim: Control
 
-@onready var duration = Upgrades.get_value(HoveredBuilding.building, "manual_speed")
+@onready var duration
 
 @onready var bar := $TextureProgressBar
 var tween: Tween

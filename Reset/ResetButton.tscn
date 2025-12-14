@@ -1,0 +1,30 @@
+[gd_scene load_steps=6 format=3 uid="uid://bdnwca8o5p4o0"]
+
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_7gcby"]
+[ext_resource type="Script" uid="uid://cj2vwsomluww0" path="res://Reset/ResetButton.gd" id="1_u5mgy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u5mgy"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(336, 98, 30, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_catp6"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(336, 116, 30, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_guk4r"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(336, 107, 30, 8)
+
+[node name="ResetButton" type="Control"]
+layout_mode = 3
+script = ExtResource("1_u5mgy")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+layout_mode = 1
+offset_right = 30.0
+offset_bottom = 8.0
+texture_normal = SubResource("AtlasTexture_u5mgy")
+texture_pressed = SubResource("AtlasTexture_catp6")
+texture_hover = SubResource("AtlasTexture_guk4r")
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]

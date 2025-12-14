@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://dis4d60p5ka0e"]
+[gd_scene load_steps=24 format=4 uid="uid://dis4d60p5ka0e"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory1.tscn" id="2_03owx"]
@@ -16,7 +16,9 @@
 [ext_resource type="PackedScene" uid="uid://kfs22yxexr8v" path="res://CustomCursor/Cursor.tscn" id="12_5vvyt"]
 [ext_resource type="AudioStream" uid="uid://drafbouw6c75p" path="res://Resources/Sounds/ClickSound.mp3" id="15_j4qnp"]
 [ext_resource type="AudioStream" uid="uid://dl5urxiqfcuad" path="res://Resources/Sounds/Knock.mp3" id="16_2cqfq"]
+[ext_resource type="AudioStream" uid="uid://dhq1rtbb2xhtl" path="res://Resources/Sounds/Gain.mp3" id="17_5tuhn"]
 [ext_resource type="AudioStream" uid="uid://cvwiadp2fhsyj" path="res://Resources/Sounds/Soundtrack.ogg" id="17_yaehf"]
+[ext_resource type="PackedScene" uid="uid://bdnwca8o5p4o0" path="res://Reset/ResetButton.tscn" id="18_kjvhd"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -167,7 +169,21 @@ volume_db = 5.0
 stream = ExtResource("16_2cqfq")
 volume_db = 2.0
 
+[node name="GainSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("17_5tuhn")
+volume_db = -5.0
+
 [node name="SoundTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_yaehf")
 volume_db = -15.0
 autoplay = true
+
+[node name="ResetButton" parent="." instance=ExtResource("18_kjvhd")]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = 288.0
+offset_top = 2.0
+offset_right = 288.0
+offset_bottom = 2.0
+grow_horizontal = 0
