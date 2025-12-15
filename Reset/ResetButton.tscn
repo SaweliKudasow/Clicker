@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bdnwca8o5p4o0"]
+[gd_scene load_steps=16 format=3 uid="uid://bdnwca8o5p4o0"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_7gcby"]
 [ext_resource type="Script" uid="uid://cj2vwsomluww0" path="res://Reset/ResetButton.gd" id="1_u5mgy"]
@@ -15,6 +15,44 @@ region = Rect2(336, 116, 30, 8)
 atlas = ExtResource("1_7gcby")
 region = Rect2(336, 107, 30, 8)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_41adc"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(320, 183, 51, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dnjiv"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(332, 192, 27, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ewkum"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(334, 203, 12, 6)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_u5mgy"]
+load_path = "res://.godot/imported/SpriteSheet.png-8c763e008348985024e688f8bfd814f5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o871q"]
+atlas = SubResource("CompressedTexture2D_u5mgy")
+region = Rect2(334, 217, 12, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wpeo4"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(334, 210, 12, 6)
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_o871q"]
+load_path = "res://.godot/imported/SpriteSheet.png-8c763e008348985024e688f8bfd814f5.ctex"
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0mw5a"]
+atlas = SubResource("CompressedTexture2D_o871q")
+region = Rect2(347, 203, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ret2v"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(347, 217, 10, 6)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_davaq"]
+atlas = ExtResource("1_7gcby")
+region = Rect2(347, 210, 10, 6)
+
 [node name="ResetButton" type="Control"]
 layout_mode = 3
 script = ExtResource("1_u5mgy")
@@ -27,4 +65,43 @@ texture_normal = SubResource("AtlasTexture_u5mgy")
 texture_pressed = SubResource("AtlasTexture_catp6")
 texture_hover = SubResource("AtlasTexture_guk4r")
 
+[node name="Question" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -21.0
+offset_right = 30.0
+offset_bottom = 8.0
+texture = SubResource("AtlasTexture_41adc")
+stretch_mode = 2
+
+[node name="ButtonField" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 9.0
+offset_right = 30.0
+offset_bottom = 19.0
+texture = SubResource("AtlasTexture_dnjiv")
+stretch_mode = 2
+
+[node name="YesButton" type="TextureButton" parent="ButtonField"]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 14.0
+offset_bottom = 8.0
+texture_normal = SubResource("AtlasTexture_ewkum")
+texture_pressed = SubResource("AtlasTexture_o871q")
+texture_hover = SubResource("AtlasTexture_wpeo4")
+
+[node name="NoButton" type="TextureButton" parent="ButtonField"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 2.0
+offset_right = 25.0
+offset_bottom = 8.0
+texture_normal = SubResource("AtlasTexture_0mw5a")
+texture_pressed = SubResource("AtlasTexture_ret2v")
+texture_hover = SubResource("AtlasTexture_davaq")
+
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="pressed" from="ButtonField/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="pressed" from="ButtonField/NoButton" to="." method="_on_no_button_pressed"]

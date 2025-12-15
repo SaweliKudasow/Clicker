@@ -171,7 +171,7 @@ volume_db = 2.0
 
 [node name="GainSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_5tuhn")
-volume_db = -5.0
+volume_db = -17.0
 
 [node name="SoundTrack" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("17_yaehf")
