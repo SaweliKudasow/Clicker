@@ -1,4 +1,4 @@
-[gd_scene load_steps=32 format=4 uid="uid://dis4d60p5ka0e"]
+[gd_scene load_steps=33 format=4 uid="uid://dis4d60p5ka0e"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory1.tscn" id="2_03owx"]
@@ -19,6 +19,7 @@
 [ext_resource type="AudioStream" uid="uid://dhq1rtbb2xhtl" path="res://Resources/Sounds/Gain.mp3" id="17_5tuhn"]
 [ext_resource type="AudioStream" uid="uid://cvwiadp2fhsyj" path="res://Resources/Sounds/Soundtrack.ogg" id="17_yaehf"]
 [ext_resource type="PackedScene" uid="uid://bdnwca8o5p4o0" path="res://Reset/ResetButton.tscn" id="18_kjvhd"]
+[ext_resource type="PackedScene" uid="uid://b3qk513t7g3rh" path="res://Clouds/cloud.tscn" id="20_2gh4u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -558,3 +559,6 @@ offset_top = 2.0
 offset_right = 288.0
 offset_bottom = 2.0
 grow_horizontal = 0
+
+[node name="Cloud" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(346, 21)
