@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=3 uid="uid://c0jki8chlwwyw"]
+
+[ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_17iqs"]
+[ext_resource type="Script" uid="uid://dgkuo5aqbcowe" path="res://FadeOut/fade_out.gd" id="1_qw6hl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qw6hl"]
+atlas = ExtResource("1_17iqs")
+region = Rect2(96, 320, 16, 16)
+
+[node name="FadeOut" type="Control"]
+z_index = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+mouse_behavior_recursive = 1
+script = ExtResource("1_qw6hl")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("AtlasTexture_qw6hl")

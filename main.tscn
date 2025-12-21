@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://dis4d60p5ka0e"]
+[gd_scene load_steps=34 format=4 uid="uid://dis4d60p5ka0e"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory1.tscn" id="2_03owx"]
@@ -20,6 +20,7 @@
 [ext_resource type="AudioStream" uid="uid://cvwiadp2fhsyj" path="res://Resources/Sounds/Soundtrack.ogg" id="17_yaehf"]
 [ext_resource type="PackedScene" uid="uid://bdnwca8o5p4o0" path="res://Reset/ResetButton.tscn" id="18_kjvhd"]
 [ext_resource type="PackedScene" uid="uid://b3qk513t7g3rh" path="res://Clouds/cloud.tscn" id="20_2gh4u"]
+[ext_resource type="PackedScene" uid="uid://c0jki8chlwwyw" path="res://FadeOut/fade_out.tscn" id="21_devvj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -529,9 +530,11 @@ tile_set = SubResource("TileSet_2gh4u")
 top_level = true
 
 [node name="Inventory" parent="." instance=ExtResource("8_j4qnp")]
+z_index = 1
 
 [node name="Cursor" parent="." instance=ExtResource("12_5vvyt")]
 top_level = true
+z_index = 2
 
 [node name="ClickSound" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("15_j4qnp")
@@ -551,6 +554,7 @@ volume_db = -15.0
 autoplay = true
 
 [node name="ResetButton" parent="." instance=ExtResource("18_kjvhd")]
+z_index = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -561,4 +565,49 @@ offset_bottom = 2.0
 grow_horizontal = 0
 
 [node name="Cloud" parent="." instance=ExtResource("20_2gh4u")]
-position = Vector2(346, 21)
+position = Vector2(83, 20)
+speed = 4.0
+
+[node name="Cloud2" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(137, 29)
+speed = 4.0
+
+[node name="Cloud4" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(68, 71)
+speed = 4.0
+
+[node name="Cloud3" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(114, 52)
+speed = 4.0
+
+[node name="Cloud5" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(210, 39)
+speed = 4.0
+
+[node name="Cloud6" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(251, 64)
+speed = 4.0
+
+[node name="Cloud9" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(317, 51)
+speed = 4.0
+
+[node name="Cloud10" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(342, 31)
+speed = 4.0
+
+[node name="Cloud11" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(327, 73)
+speed = 4.0
+
+[node name="Cloud7" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(238, 17)
+speed = 4.0
+
+[node name="Cloud8" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(208, 83)
+speed = 4.0
+
+[node name="FadeOut" parent="." instance=ExtResource("21_devvj")]
+offset_right = 320.0
+offset_bottom = 180.0
