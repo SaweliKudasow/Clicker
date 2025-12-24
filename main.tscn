@@ -572,12 +572,12 @@ speed = 4.0
 position = Vector2(137, 29)
 speed = 4.0
 
-[node name="Cloud4" parent="." instance=ExtResource("20_2gh4u")]
-position = Vector2(68, 71)
-speed = 4.0
-
 [node name="Cloud3" parent="." instance=ExtResource("20_2gh4u")]
 position = Vector2(114, 52)
+speed = 4.0
+
+[node name="Cloud4" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(68, 71)
 speed = 4.0
 
 [node name="Cloud5" parent="." instance=ExtResource("20_2gh4u")]
@@ -586,6 +586,14 @@ speed = 4.0
 
 [node name="Cloud6" parent="." instance=ExtResource("20_2gh4u")]
 position = Vector2(251, 64)
+speed = 4.0
+
+[node name="Cloud7" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(238, 17)
+speed = 4.0
+
+[node name="Cloud8" parent="." instance=ExtResource("20_2gh4u")]
+position = Vector2(208, 83)
 speed = 4.0
 
 [node name="Cloud9" parent="." instance=ExtResource("20_2gh4u")]
@@ -600,14 +608,7 @@ speed = 4.0
 position = Vector2(327, 73)
 speed = 4.0
 
-[node name="Cloud7" parent="." instance=ExtResource("20_2gh4u")]
-position = Vector2(238, 17)
-speed = 4.0
-
-[node name="Cloud8" parent="." instance=ExtResource("20_2gh4u")]
-position = Vector2(208, 83)
-speed = 4.0
-
 [node name="FadeOut" parent="." instance=ExtResource("21_devvj")]
+visible = false
 offset_right = 320.0
 offset_bottom = 180.0

@@ -3,6 +3,7 @@ extends Control
 @onready var texture = $TextureRect
 
 func _ready():
+	self.show()
 	fade_out(2.5)
 
 func fade_out(duration := 1.0):
