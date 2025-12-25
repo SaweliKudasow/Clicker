@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://gem0wpg42k72"]
+[gd_scene load_steps=8 format=3 uid="uid://gem0wpg42k72"]
 
 [ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_2yopf"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_5j34s"]
@@ -11,6 +11,10 @@ region = Rect2(48, 0, 48, 32)
 atlas = ExtResource("1_5j34s")
 region = Rect2(48, 32, 48, 32)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1win"]
+atlas = ExtResource("1_5j34s")
+region = Rect2(384, 32, 48, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yopf"]
 atlas = ExtResource("1_5j34s")
 region = Rect2(48, 0, 48, 32)
@@ -18,11 +22,18 @@ region = Rect2(48, 0, 48, 32)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gjg"]
 size = Vector2(23, 11)
 
-[node name="Castle" type="Area2D"]
+[node name="Castle" type="Area2D" node_paths=PackedStringArray("upgrade_anim")]
 script = ExtResource("1_2yopf")
 is_castle = true
 normal_texture = SubResource("AtlasTexture_f1gjg")
 hover_texture = SubResource("AtlasTexture_qnfc1")
+upgrade_anim = NodePath("Anim")
+
+[node name="Anim" type="Sprite2D" parent="."]
+visible = false
+z_index = 1
+position = Vector2(0, -9)
+texture = SubResource("AtlasTexture_q1win")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(0, -9)

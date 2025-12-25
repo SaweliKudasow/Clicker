@@ -10,8 +10,17 @@ extends Area2D
 @export var hover_texture: Texture2D # текстура обводки
 @export var upgrade_menu: Control # меню апгрейда
 @export var progress_bar: Control # прогресс бар
+@export var upgrade_anim: Sprite2D # анимация прокачки
 
 var mouse_over := false # находится ли мышка на здании
+
+func lvl_up_anim():
+	for i in range(3):
+		upgrade_anim.show()
+		await get_tree().create_timer(0.1).timeout
+		
+		upgrade_anim.hide()
+		await get_tree().create_timer(0.1).timeout
 
 func _ready():
 	sprite.texture = normal_texture
@@ -22,6 +31,7 @@ func _on_mouse_entered():
 	#if not upgrade_menu.cursor_inside:
 	upgrade_menu.show()
 	HoveredBuilding.building = self.name
+	HoveredBuilding.type = self
 	print(HoveredBuilding.building)
 	upgrade_menu.update_bar()
 	if not is_castle:

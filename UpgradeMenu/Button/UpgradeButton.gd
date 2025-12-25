@@ -65,5 +65,6 @@ func _on_pressed():
 		upgrade_cost.show_cost(button_type)
 		update_bar.update(up)
 		GameData.save_upgrades()
+		HoveredBuilding.type.lvl_up_anim()
 	else:
 		print("Not enough materials")
