@@ -5,6 +5,8 @@ extends TextureButton
 @onready var inventory := $"../../../Inventory"
 @onready var button_type
 @onready var is_max = false
+@onready var game_over := $"../../../GameOver"
+@onready var fade := $"../../../FadeOut"
 @export var update_bar: Control
 
 func _ready():
@@ -66,5 +68,8 @@ func _on_pressed():
 		update_bar.update(up)
 		GameData.save_upgrades()
 		HoveredBuilding.type.lvl_up_anim()
+		
+		if game_over.all_upgrades_max_level(Upgrades.upgrades):
+			fade.fade_in()
 	else:
 		print("Not enough materials")

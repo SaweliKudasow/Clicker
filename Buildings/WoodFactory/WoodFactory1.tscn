@@ -27,6 +27,8 @@ script = ExtResource("1_c6qfd")
 normal_texture = SubResource("AtlasTexture_v061q")
 hover_texture = SubResource("AtlasTexture_uxa3w")
 upgrade_anim = NodePath("Anim")
+upgrade1 = "manual_gain"
+upgrade2 = "manual_speed"
 
 [node name="Anim" type="Sprite2D" parent="."]
 visible = false
