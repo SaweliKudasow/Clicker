@@ -55,6 +55,7 @@ region = Rect2(347, 210, 10, 6)
 
 [node name="ResetButton" type="Control"]
 layout_mode = 3
+anchors_preset = 0
 script = ExtResource("1_u5mgy")
 
 [node name="TextureButton" type="TextureButton" parent="."]
@@ -66,6 +67,7 @@ texture_pressed = SubResource("AtlasTexture_catp6")
 texture_hover = SubResource("AtlasTexture_guk4r")
 
 [node name="Question" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = -21.0
 offset_right = 30.0
@@ -74,6 +76,7 @@ texture = SubResource("AtlasTexture_41adc")
 stretch_mode = 2
 
 [node name="ButtonField" type="TextureRect" parent="."]
+visible = false
 layout_mode = 0
 offset_left = 3.0
 offset_top = 9.0

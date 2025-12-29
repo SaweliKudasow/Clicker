@@ -67,6 +67,7 @@ func _on_pressed():
 		upgrade_cost.show_cost(button_type)
 		update_bar.update(up)
 		GameData.save_upgrades()
+		HoveredBuilding.type.update_nodes()
 		HoveredBuilding.type.lvl_up_anim()
 		
 		if game_over.all_upgrades_max_level(Upgrades.upgrades):

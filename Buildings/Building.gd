@@ -13,6 +13,15 @@ extends Area2D
 @export var upgrade_anim: Sprite2D # анимация прокачки
 
 var mouse_over := false # находится ли мышка на здании
+# var upgrade_anim: Sprite2D
+
+func update_nodes():
+	var get_gain_lvl = Upgrades.get_level(self.name, "manual_gain")
+	var get_speed_lvl = Upgrades.get_level(self.name, "manual_speed")
+	
+	if get_gain_lvl >= 2 && get_speed_lvl >= 2:
+		$lvl3.show()
+		upgrade_anim = $lvl3/Anim
 
 func lvl_up_anim():
 	for i in range(3):
@@ -24,6 +33,7 @@ func lvl_up_anim():
 
 func _ready():
 	sprite.texture = normal_texture
+	upgrade_anim = $Anim
 
 func _on_mouse_entered():
 	sprite.texture = hover_texture
