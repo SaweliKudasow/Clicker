@@ -440,7 +440,7 @@ upgrade_menu = NodePath("UpgradeMenu")
 progress_bar = NodePath("ProgressBar")
 
 [node name="Shield" parent="StoneFactory" instance=ExtResource("3_wkp8b")]
-position = Vector2(0, -24)
+position = Vector2(0, -38)
 
 [node name="UpgradeMenu" parent="StoneFactory" instance=ExtResource("9_03owx")]
 visible = false
@@ -450,17 +450,16 @@ offset_bottom = 29.0
 [node name="ProgressBar" parent="StoneFactory" node_paths=PackedStringArray("value_anim") instance=ExtResource("5_20pc6")]
 visible = false
 offset_left = -6.0
-offset_top = -17.0
+offset_top = -31.0
 offset_right = -6.0
-offset_bottom = -17.0
+offset_bottom = -31.0
 value_anim = NodePath("../ValueAnim")
 
 [node name="ValueAnim" parent="StoneFactory" instance=ExtResource("6_c2ibq")]
-offset_left = 9.0
-offset_top = -8.0
-offset_right = 9.0
-offset_bottom = -8.0
-metadata/_edit_use_anchors_ = true
+offset_left = 20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = -9.0
 
 [node name="WoodFactory" parent="." node_paths=PackedStringArray("upgrade_menu", "progress_bar") instance=ExtResource("4_20pc6")]
 position = Vector2(243, 138)
@@ -468,7 +467,7 @@ upgrade_menu = NodePath("UpgradeMenu")
 progress_bar = NodePath("ProgressBar")
 
 [node name="Shield" parent="WoodFactory" instance=ExtResource("5_5vvyt")]
-position = Vector2(0, -24)
+position = Vector2(0, -38)
 
 [node name="UpgradeMenu" parent="WoodFactory" instance=ExtResource("9_03owx")]
 visible = false
@@ -478,17 +477,16 @@ offset_bottom = 29.0
 [node name="ProgressBar" parent="WoodFactory" node_paths=PackedStringArray("value_anim") instance=ExtResource("5_20pc6")]
 visible = false
 offset_left = -6.0
-offset_top = -17.0
+offset_top = -31.0
 offset_right = -6.0
-offset_bottom = -17.0
+offset_bottom = -31.0
 value_anim = NodePath("../ValueAnim")
 
 [node name="ValueAnim" parent="WoodFactory" instance=ExtResource("6_c2ibq")]
-offset_left = 9.0
-offset_top = -8.0
-offset_right = 9.0
-offset_bottom = -8.0
-metadata/_edit_use_anchors_ = true
+offset_left = 20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = -9.0
 
 [node name="Castle" parent="." node_paths=PackedStringArray("upgrade_menu") instance=ExtResource("6_c6i3y")]
 position = Vector2(162, 138)
@@ -501,18 +499,17 @@ offset_bottom = 29.0
 
 [node name="CastleProgressBar" parent="Castle" node_paths=PackedStringArray("value_anim") instance=ExtResource("10_c6i3y")]
 visible = false
-offset_left = -7.0
-offset_top = -17.0
-offset_right = -7.0
-offset_bottom = -17.0
+offset_left = -5.0
+offset_top = -31.0
+offset_right = -5.0
+offset_bottom = -31.0
 value_anim = NodePath("../ValueAnim")
 
 [node name="ValueAnim" parent="Castle" instance=ExtResource("6_c2ibq")]
-offset_left = 13.0
-offset_top = -7.0
-offset_right = 13.0
-offset_bottom = -7.0
-metadata/_edit_use_anchors_ = true
+offset_left = 20.0
+offset_top = -9.0
+offset_right = 20.0
+offset_bottom = -9.0
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="."]
 visible = false

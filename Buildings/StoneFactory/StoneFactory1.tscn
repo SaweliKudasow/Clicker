@@ -1,42 +1,32 @@
-[gd_scene load_steps=11 format=3 uid="uid://cleft587sipe7"]
+[gd_scene load_steps=8 format=3 uid="uid://cleft587sipe7"]
 
 [ext_resource type="Script" uid="uid://0gkiidmm1xya" path="res://Buildings/Building.gd" id="1_k2na8"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="2_qdqwo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g1udm"]
 atlas = ExtResource("2_qdqwo")
-region = Rect2(48, 128, 48, 32)
+region = Rect2(240, 128, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n8ypr"]
 atlas = ExtResource("2_qdqwo")
-region = Rect2(48, 160, 48, 32)
+region = Rect2(240, 160, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_s70q5"]
 atlas = ExtResource("2_qdqwo")
-region = Rect2(384, 0, 48, 32)
+region = Rect2(576, 0, 48, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2yopf"]
 atlas = ExtResource("2_qdqwo")
-region = Rect2(48, 64, 48, 32)
+region = Rect2(240, 128, 48, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f1gjg"]
-size = Vector2(14, 12)
+size = Vector2(37, 29)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6iefi"]
-atlas = ExtResource("2_qdqwo")
-region = Rect2(432, 0, 48, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijj66"]
-atlas = ExtResource("2_qdqwo")
-region = Rect2(96, 64, 48, 32)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_pi3x3"]
-size = Vector2(37, 12)
-
-[node name="StoneFactory" type="Area2D"]
+[node name="StoneFactory" type="Area2D" node_paths=PackedStringArray("upgrade_anim")]
 script = ExtResource("1_k2na8")
 normal_texture = SubResource("AtlasTexture_g1udm")
 hover_texture = SubResource("AtlasTexture_n8ypr")
+upgrade_anim = NodePath("Anim")
 
 [node name="Anim" type="Sprite2D" parent="."]
 visible = false
@@ -49,26 +39,11 @@ position = Vector2(0, -9)
 texture = SubResource("AtlasTexture_2yopf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -8.5)
 shape = SubResource("RectangleShape2D_f1gjg")
 
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
-
-[node name="lvl3" type="Node2D" parent="."]
-visible = false
-
-[node name="Anim" type="Sprite2D" parent="lvl3"]
-z_index = 1
-position = Vector2(0, -9)
-texture = SubResource("AtlasTexture_6iefi")
-
-[node name="Sprite2D" type="Sprite2D" parent="lvl3"]
-position = Vector2(0, -9)
-texture = SubResource("AtlasTexture_ijj66")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="lvl3"]
-position = Vector2(0.5, 0)
-shape = SubResource("RectangleShape2D_pi3x3")
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
