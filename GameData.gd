@@ -2,6 +2,15 @@ extends Node
 
 var inventory: Control = null
 
+func save_messages():
+	var file = FileAccess.open("user://messages.save", FileAccess.WRITE)
+	file.store_var(Upgrades.welcome_messages)
+
+func load_messages():
+	if FileAccess.file_exists("user://messages.save"):
+		var file = FileAccess.open("user://messages.save", FileAccess.READ)
+		Upgrades.welcome_messages = file.get_var()
+
 func save_upgrades():
 	var file = FileAccess.open("user://upgrades.save", FileAccess.WRITE)
 	file.store_var(Upgrades.upgrades)
@@ -33,6 +42,10 @@ func reset():
 	if FileAccess.file_exists("user://resources.save"):
 		DirAccess.remove_absolute("user://resources.save")
 	
+	if FileAccess.file_exists("user://messages.save"):
+		DirAccess.remove_absolute("user://messages.save")
+	
+	Upgrades.welcome_messages = true
 	Upgrades.upgrades = Upgrades.get_default_upgrades()
 
 func _ready():

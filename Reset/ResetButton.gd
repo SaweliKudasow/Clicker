@@ -22,6 +22,7 @@ func _on_no_button_pressed():
 	hide_menu()
 
 func _on_yes_button_pressed():
+	play_sound()
 	fade_out.fade_in()
 	await get_tree().create_timer(2.0).timeout
 	

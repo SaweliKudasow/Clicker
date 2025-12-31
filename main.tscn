@@ -1,4 +1,4 @@
-[gd_scene load_steps=35 format=4 uid="uid://dis4d60p5ka0e"]
+[gd_scene load_steps=36 format=4 uid="uid://dis4d60p5ka0e"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_trn2v"]
 [ext_resource type="PackedScene" uid="uid://cleft587sipe7" path="res://Buildings/StoneFactory/StoneFactory1.tscn" id="2_03owx"]
@@ -22,6 +22,7 @@
 [ext_resource type="PackedScene" uid="uid://b3qk513t7g3rh" path="res://Clouds/cloud.tscn" id="20_2gh4u"]
 [ext_resource type="PackedScene" uid="uid://c0jki8chlwwyw" path="res://FadeOut/fade_out.tscn" id="21_devvj"]
 [ext_resource type="Script" uid="uid://pu8elxmi3s26" path="res://game_over.gd" id="22_3b0ty"]
+[ext_resource type="PackedScene" uid="uid://cuml1sqnd46ap" path="res://welcome.tscn" id="23_bg4s2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0xm2m"]
 texture = ExtResource("1_trn2v")
@@ -625,3 +626,9 @@ offset_bottom = 180.0
 
 [node name="GameOver" type="Node2D" parent="."]
 script = ExtResource("22_3b0ty")
+
+[node name="Welcome" parent="." instance=ExtResource("23_bg4s2")]
+offset_left = 163.0
+offset_top = 15.0
+offset_right = 163.0
+offset_bottom = 15.0
