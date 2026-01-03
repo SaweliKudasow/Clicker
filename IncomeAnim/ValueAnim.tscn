@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://bo0s713oaiwad"]
 
 [ext_resource type="Script" uid="uid://i8u2bo37huiv" path="res://IncomeAnim/ValueAnim.gd" id="1_kkcl6"]
-[ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_nnuas"]
+[ext_resource type="FontFile" uid="uid://c1ax1r7bpmxh8" path="res://Resources/boldpixels.boldpixels.otf" id="2_16rpv"]
 
 [node name="ValueAnim" type="Control"]
 layout_mode = 3
@@ -12,6 +12,6 @@ script = ExtResource("1_kkcl6")
 layout_mode = 0
 offset_right = 8.0
 offset_bottom = 4.0
-theme_override_fonts/font = ExtResource("2_nnuas")
+theme_override_fonts/font = ExtResource("2_16rpv")
 theme_override_font_sizes/font_size = 4
 text = "+1"

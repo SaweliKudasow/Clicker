@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_b3bc3"]
 [ext_resource type="Script" uid="uid://bfbs3oh4ommj5" path="res://Inventory/Inventory.gd" id="1_g6l6n"]
-[ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_3b2b5"]
+[ext_resource type="FontFile" uid="uid://c1ax1r7bpmxh8" path="res://Resources/boldpixels.boldpixels.otf" id="3_orgsn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3b2b5"]
 atlas = ExtResource("1_b3bc3")
@@ -37,7 +37,7 @@ offset_left = 0.00799942
 offset_top = -1.9920006
 offset_right = 20.008
 offset_bottom = 2.0079994
-theme_override_fonts/font = ExtResource("2_3b2b5")
+theme_override_fonts/font = ExtResource("3_orgsn")
 theme_override_font_sizes/font_size = 4
 text = "0"
 
@@ -52,6 +52,6 @@ offset_left = 0.00799942
 offset_top = -2.0080013
 offset_right = 20.008
 offset_bottom = 1.9919987
-theme_override_fonts/font = ExtResource("2_3b2b5")
+theme_override_fonts/font = ExtResource("3_orgsn")
 theme_override_font_sizes/font_size = 4
 text = "0"

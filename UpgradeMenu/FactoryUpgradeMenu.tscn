@@ -1,10 +1,11 @@
-[gd_scene load_steps=12 format=3 uid="uid://cb6ge7vjvytde"]
+[gd_scene load_steps=13 format=3 uid="uid://cb6ge7vjvytde"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_6w8xc"]
 [ext_resource type="Script" uid="uid://cic7msw6ux3nj" path="res://UpgradeMenu/UpgradeMenu.gd" id="1_s63oj"]
 [ext_resource type="Script" uid="uid://duhk6aaplq3x5" path="res://UpgradeMenu/Button/UpgradeButton.gd" id="3_670fu"]
 [ext_resource type="PackedScene" uid="uid://3by0jaf1i2cm" path="res://UpgradeMenu/Cost/UpgradeCost.tscn" id="4_gd12q"]
 [ext_resource type="PackedScene" uid="uid://ca53xf0yu0a02" path="res://UpgradeMenu/Bar/UpdateBar.tscn" id="5_gd12q"]
+[ext_resource type="FontFile" uid="uid://c1ax1r7bpmxh8" path="res://Resources/boldpixels.boldpixels.otf" id="6_053pd"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_a4xni"]
 atlas = ExtResource("1_6w8xc")
@@ -99,11 +100,42 @@ offset_bottom = -2.0
 bar_type = "manual_speed"
 
 [node name="UpgradeCost" parent="." instance=ExtResource("4_gd12q")]
+visible = false
 layout_mode = 0
 offset_left = -27.0
 offset_top = 3.0
 offset_right = -27.0
 offset_bottom = 3.0
+
+[node name="UpgradeLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 2.0
+offset_top = 2.0
+offset_right = 42.0
+offset_bottom = 10.0
+theme_override_fonts/font = ExtResource("6_053pd")
+theme_override_font_sizes/font_size = 8
+text = "Upgrade:"
+
+[node name="ManualGainLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 8.0
+offset_right = 74.0
+offset_bottom = 16.0
+theme_override_fonts/font = ExtResource("6_053pd")
+theme_override_font_sizes/font_size = 8
+text = "Manual Gain"
+
+[node name="ManualSpeedLabel" type="Label" parent="."]
+layout_mode = 0
+offset_left = 33.0
+offset_top = 14.0
+offset_right = 78.0
+offset_bottom = 22.0
+theme_override_fonts/font = ExtResource("6_053pd")
+theme_override_font_sizes/font_size = 8
+text = "Manual Speed"
 
 [connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
 [connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]

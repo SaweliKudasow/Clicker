@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://cuml1sqnd46ap"]
+[gd_scene load_steps=10 format=3 uid="uid://cuml1sqnd46ap"]
 
 [ext_resource type="Script" uid="uid://dgpp5b7vw2orw" path="res://welcome.gd" id="1_6xvht"]
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_odedu"]
-[ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="2_6xvht"]
+[ext_resource type="FontFile" uid="uid://c1ax1r7bpmxh8" path="res://Resources/boldpixels.boldpixels.otf" id="3_f0t8f"]
+[ext_resource type="Script" uid="uid://3bdg83ks362a" path="res://hover_button.gd" id="4_f0t8f"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_f0t8f"]
 atlas = ExtResource("1_odedu")
@@ -56,13 +57,12 @@ visible = false
 layout_mode = 0
 offset_left = 2.0
 offset_top = 6.0
-offset_right = 96.0
-offset_bottom = 29.0
-theme_override_fonts/font = ExtResource("2_6xvht")
-theme_override_font_sizes/font_size = 4
-text = "Hold the left mouse button
-on buildings to generate
-currency."
+offset_right = 93.0
+offset_bottom = 28.0
+theme_override_fonts/font = ExtResource("3_f0t8f")
+theme_override_font_sizes/font_size = 5
+text = "Hold the left mouse button on buildings 
+to generate currency."
 
 [node name="Label2" type="Label" parent="Control"]
 visible = false
@@ -71,11 +71,10 @@ offset_left = 2.0
 offset_top = 6.0
 offset_right = 96.0
 offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("2_6xvht")
-theme_override_font_sizes/font_size = 4
-text = "Use your earnings to
-upgrade buildings and
-increase their production."
+theme_override_fonts/font = ExtResource("3_f0t8f")
+theme_override_font_sizes/font_size = 5
+text = "Use your earnings to upgrade buildings 
+and increase their production."
 
 [node name="Label3" type="Label" parent="Control"]
 visible = false
@@ -83,11 +82,10 @@ layout_mode = 0
 offset_left = 2.0
 offset_top = 6.0
 offset_right = 96.0
-offset_bottom = 24.0
-theme_override_fonts/font = ExtResource("2_6xvht")
-theme_override_font_sizes/font_size = 4
-text = "Upgrade all buildings
-and reach maximum
+offset_bottom = 29.0
+theme_override_fonts/font = ExtResource("3_f0t8f")
+theme_override_font_sizes/font_size = 5
+text = "Upgrade all buildings and reach maximum
 efficiency."
 
 [node name="Next" type="TextureButton" parent="Control"]
@@ -99,6 +97,16 @@ offset_bottom = 36.0
 texture_normal = SubResource("AtlasTexture_roe5y")
 texture_pressed = SubResource("AtlasTexture_yo83p")
 
+[node name="Label" type="Label" parent="Control/Next"]
+layout_mode = 0
+offset_right = 20.0
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("3_f0t8f")
+theme_override_font_sizes/font_size = 5
+text = "Next"
+horizontal_alignment = 1
+script = ExtResource("4_f0t8f")
+
 [node name="Skip" type="TextureButton" parent="Control"]
 layout_mode = 0
 offset_left = 3.0
@@ -108,5 +116,19 @@ offset_bottom = 36.0
 texture_normal = SubResource("AtlasTexture_2u335")
 texture_pressed = SubResource("AtlasTexture_lln63")
 
+[node name="Label" type="Label" parent="Control/Skip"]
+layout_mode = 0
+offset_right = 18.0
+offset_bottom = 6.0
+theme_override_fonts/font = ExtResource("3_f0t8f")
+theme_override_font_sizes/font_size = 5
+text = "Skip"
+horizontal_alignment = 1
+script = ExtResource("4_f0t8f")
+
+[connection signal="button_down" from="Control/Next" to="Control/Next/Label" method="_on_button_down"]
+[connection signal="button_up" from="Control/Next" to="Control/Next/Label" method="_on_button_up"]
 [connection signal="pressed" from="Control/Next" to="." method="_on_next_pressed"]
+[connection signal="button_down" from="Control/Skip" to="Control/Skip/Label" method="_on_button_down"]
+[connection signal="button_up" from="Control/Skip" to="Control/Skip/Label" method="_on_button_up"]
 [connection signal="pressed" from="Control/Skip" to="." method="_on_skip_pressed"]

@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_17iqs"]
 [ext_resource type="Script" uid="uid://dgkuo5aqbcowe" path="res://FadeOut/fade_out.gd" id="1_qw6hl"]
-[ext_resource type="FontFile" uid="uid://c3ljppiiudauf" path="res://Resources/4x3-pixel.otf" id="3_f70i3"]
+[ext_resource type="FontFile" uid="uid://c1ax1r7bpmxh8" path="res://Resources/boldpixels.boldpixels.otf" id="3_8kf8g"]
 [ext_resource type="PackedScene" uid="uid://bdnwca8o5p4o0" path="res://Reset/ResetButton.tscn" id="4_8kf8g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qw6hl"]
@@ -45,9 +45,10 @@ offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_behavior_recursive = 2
-theme_override_fonts/font = ExtResource("3_f70i3")
-theme_override_font_sizes/font_size = 4
+theme_override_fonts/font = ExtResource("3_8kf8g")
+theme_override_font_sizes/font_size = 8
 text = "Congratulations!"
+horizontal_alignment = 1
 
 [node name="ResetButton" parent="." instance=ExtResource("4_8kf8g")]
 visible = false

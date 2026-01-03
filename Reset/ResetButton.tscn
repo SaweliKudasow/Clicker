@@ -1,7 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bdnwca8o5p4o0"]
+[gd_scene load_steps=18 format=3 uid="uid://bdnwca8o5p4o0"]
 
 [ext_resource type="Texture2D" uid="uid://wao6rmmiyg37" path="res://Resources/SpriteSheet.png" id="1_7gcby"]
 [ext_resource type="Script" uid="uid://cj2vwsomluww0" path="res://Reset/ResetButton.gd" id="1_u5mgy"]
+[ext_resource type="FontFile" uid="uid://c1ax1r7bpmxh8" path="res://Resources/boldpixels.boldpixels.otf" id="3_catp6"]
+[ext_resource type="Script" uid="uid://3bdg83ks362a" path="res://hover_button.gd" id="4_guk4r"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5mgy"]
 atlas = ExtResource("1_7gcby")
@@ -66,6 +68,17 @@ texture_normal = SubResource("AtlasTexture_u5mgy")
 texture_pressed = SubResource("AtlasTexture_catp6")
 texture_hover = SubResource("AtlasTexture_guk4r")
 
+[node name="Label" type="Label" parent="TextureButton"]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 8.0
+theme_override_colors/font_color = Color(0.5019608, 0.039215688, 0.35686275, 1)
+theme_override_fonts/font = ExtResource("3_catp6")
+theme_override_font_sizes/font_size = 8
+text = "Restart"
+horizontal_alignment = 1
+script = ExtResource("4_guk4r")
+
 [node name="Question" type="TextureRect" parent="."]
 visible = false
 layout_mode = 0
@@ -74,6 +87,16 @@ offset_right = 30.0
 offset_bottom = 8.0
 texture = SubResource("AtlasTexture_41adc")
 stretch_mode = 2
+
+[node name="Label" type="Label" parent="Question"]
+layout_mode = 0
+offset_top = 1.0
+offset_right = 51.0
+offset_bottom = 7.0
+theme_override_fonts/font = ExtResource("3_catp6")
+theme_override_font_sizes/font_size = 5
+text = "Are you sure?"
+horizontal_alignment = 1
 
 [node name="ButtonField" type="TextureRect" parent="."]
 visible = false
@@ -95,6 +118,19 @@ texture_normal = SubResource("AtlasTexture_ewkum")
 texture_pressed = SubResource("AtlasTexture_o871q")
 texture_hover = SubResource("AtlasTexture_wpeo4")
 
+[node name="Label" type="Label" parent="ButtonField/YesButton"]
+layout_mode = 0
+offset_left = 1.0
+offset_top = -1.0
+offset_right = 12.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.5764706, 0.12156863, 0.12156863, 1)
+theme_override_fonts/font = ExtResource("3_catp6")
+theme_override_font_sizes/font_size = 7
+text = "Yes"
+horizontal_alignment = 1
+script = ExtResource("4_guk4r")
+
 [node name="NoButton" type="TextureButton" parent="ButtonField"]
 layout_mode = 0
 offset_left = 15.0
@@ -105,6 +141,27 @@ texture_normal = SubResource("AtlasTexture_0mw5a")
 texture_pressed = SubResource("AtlasTexture_ret2v")
 texture_hover = SubResource("AtlasTexture_davaq")
 
+[node name="Label" type="Label" parent="ButtonField/NoButton"]
+layout_mode = 0
+offset_top = -1.0
+offset_right = 10.0
+offset_bottom = 7.0
+theme_override_colors/font_color = Color(0.12156863, 0.5764706, 0.16078432, 1)
+theme_override_fonts/font = ExtResource("3_catp6")
+theme_override_font_sizes/font_size = 7
+text = "No"
+horizontal_alignment = 1
+script = ExtResource("4_guk4r")
+
+[connection signal="button_down" from="TextureButton" to="TextureButton/Label" method="_on_button_down"]
+[connection signal="mouse_entered" from="TextureButton" to="TextureButton/Label" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="TextureButton" to="TextureButton/Label" method="_on_button_mouse_exited"]
 [connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
+[connection signal="button_down" from="ButtonField/YesButton" to="ButtonField/YesButton/Label" method="_on_button_down"]
+[connection signal="mouse_entered" from="ButtonField/YesButton" to="ButtonField/YesButton/Label" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonField/YesButton" to="ButtonField/YesButton/Label" method="_on_button_mouse_exited"]
 [connection signal="pressed" from="ButtonField/YesButton" to="." method="_on_yes_button_pressed"]
+[connection signal="button_down" from="ButtonField/NoButton" to="ButtonField/NoButton/Label" method="_on_button_down"]
+[connection signal="mouse_entered" from="ButtonField/NoButton" to="ButtonField/NoButton/Label" method="_on_button_mouse_entered"]
+[connection signal="mouse_exited" from="ButtonField/NoButton" to="ButtonField/NoButton/Label" method="_on_button_mouse_exited"]
 [connection signal="pressed" from="ButtonField/NoButton" to="." method="_on_no_button_pressed"]
